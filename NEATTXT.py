@@ -5,6 +5,14 @@ import time
 import math
 import os
 
+midnight = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+now = datetime.now()
+delta = now - midnight
+deltam=int(delta.seconds)//60
+deltah=int(deltam)//60
+deltami=str(datetime.now().strftime("%M"))
+print(str(deltah) + ":" + str(deltami))
+
 SID=666076
 name='Blayk'
 middleInitinal='R'
@@ -19,7 +27,7 @@ def txtapp():
     if(os.path.getsize("testfilemth.txt")==0):
         fin="testfilemth.txt"
         file=open(fin,"w")
-        file.write('\n'+"==============================================")
+        file.write("==============================================")
         file.write('\n'+name+" "+middleInitinal+' '+Lname+'\t'+str(SID))
     fin="testfilemth.txt"
     file=open(fin,"a")
